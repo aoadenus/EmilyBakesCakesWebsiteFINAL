@@ -80,10 +80,14 @@ if (totalSlides > 0) {
 // MENU TABS FUNCTIONALITY (Menu Page)
 // ============================================================================
 function showTab(tabId) {
+    console.log('showTab called with:', tabId);
+    
     // Hide all tab content
     const allTabs = document.querySelectorAll('.tab-content');
+    console.log('Found tabs:', allTabs.length);
     allTabs.forEach(tab => {
         tab.classList.remove('active');
+        tab.style.display = 'none';
     });
     
     // Remove active class from all buttons
@@ -94,14 +98,17 @@ function showTab(tabId) {
     
     // Show selected tab
     const selectedTab = document.getElementById(tabId);
+    console.log('Selected tab:', selectedTab);
     if (selectedTab) {
         selectedTab.classList.add('active');
+        selectedTab.style.display = 'block';
+    } else {
+        console.error('Tab not found:', tabId);
     }
     
-    // Add active class to clicked button (use window.event for inline onclick)
-    const clickedButton = window.event ? window.event.target : null;
-    if (clickedButton && clickedButton.classList.contains('tab-btn')) {
-        clickedButton.classList.add('active');
+    // Add active class to clicked button
+    if (window.event && window.event.target) {
+        window.event.target.classList.add('active');
     }
 }
 
