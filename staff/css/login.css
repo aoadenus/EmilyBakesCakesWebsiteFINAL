@@ -1,0 +1,285 @@
+/* ============================================================================
+   EMILY BAKES CAKES - STAFF PORTAL STYLESHEET
+   Colors: #F8EBD7 (cream), #C44569 (raspberry pink), #2B2B2B (charcoal)
+   Fonts: Playfair Display (headings), Poppins (subheadings), Open Sans (body)
+   ============================================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@500;600;700&family=Open+Sans:wght@400;500;600&display=swap");
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background: #f8ebd7;
+  color: #2b2b2b;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.6;
+}
+
+/* Login Page Styles */
+.login-container {
+  width: 100%;
+  max-width: 450px;
+  padding: 20px;
+}
+
+.login-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(43, 43, 43, 0.15);
+  padding: 40px;
+}
+
+.logo-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo-section h1 {
+  font-family: "Playfair Display", serif;
+  color: #c44569;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.logo-section p {
+  font-family: "Poppins", sans-serif;
+  color: #5a3825;
+  font-size: 16px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.form-label {
+  font-family: "Poppins", sans-serif;
+  color: #2b2b2b;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form-control {
+  font-family: "Open Sans", sans-serif;
+  border-radius: 8px;
+  border: 2px solid #f8ebd7;
+  padding: 12px 15px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #c44569;
+  box-shadow: 0 0 0 0.2rem rgba(196, 69, 105, 0.15);
+  outline: none;
+}
+
+.btn-primary {
+  font-family: "Poppins", sans-serif;
+  background-color: #c44569;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(196, 69, 105, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: #a63857;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(196, 69, 105, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.demo-credentials {
+  margin-top: 30px;
+  padding: 20px;
+  background: #faf5f0;
+  border-radius: 12px;
+  border: 2px solid #f8ebd7;
+}
+
+.demo-credentials h6 {
+  font-family: "Poppins", sans-serif;
+  color: #2b2b2b;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+.demo-credentials p {
+  font-family: "Open Sans", sans-serif;
+  margin: 10px 0;
+  font-size: 13px;
+  color: #5a3825;
+  line-height: 1.6;
+}
+
+.demo-credentials strong {
+  font-family: "Poppins", sans-serif;
+  color: #2b2b2b;
+  font-weight: 600;
+}
+
+.alert {
+  font-family: "Open Sans", sans-serif;
+  border-radius: 10px;
+  font-size: 14px;
+  border: none;
+}
+
+.alert-danger {
+  background-color: #ffe5e5;
+  color: #c44569;
+  border-left: 4px solid #c44569;
+}
+
+/* Dashboard & Internal Pages Styles */
+.navbar {
+  background: #c44569 !important;
+  box-shadow: 0 2px 8px rgba(43, 43, 43, 0.15);
+}
+
+.navbar-brand {
+  font-family: "Playfair Display", serif !important;
+  font-weight: 700 !important;
+  font-size: 24px !important;
+  color: white !important;
+}
+
+.navbar-text {
+  font-family: "Poppins", sans-serif;
+  color: white !important;
+  font-weight: 500;
+}
+
+.badge {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.bg-primary {
+  background-color: #c44569 !important;
+}
+
+.bg-success {
+  background-color: #28a745 !important;
+}
+
+.bg-info {
+  background-color: #17a2b8 !important;
+}
+
+.bg-warning {
+  background-color: #ffc107 !important;
+}
+
+.bg-secondary {
+  background-color: #6c757d !important;
+}
+
+.btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.card {
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(43, 43, 43, 0.08);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(196, 69, 105, 0.15);
+  transform: translateY(-2px);
+}
+
+.card-title {
+  font-family: "Poppins", serif;
+  font-weight: 600;
+  color: #2b2b2b;
+}
+
+.card-text {
+  font-family: "Open Sans", sans-serif;
+  color: #5a3825;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+  color: #2b2b2b;
+}
+
+.table {
+  font-family: "Open Sans", sans-serif;
+}
+
+.table thead {
+  font-family: "Poppins", sans-serif;
+  background-color: #faf5f0;
+  color: #2b2b2b;
+}
+
+.btn {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #c44569;
+  border-color: #c44569;
+}
+
+.btn-primary:hover {
+  background-color: #a63857;
+  border-color: #a63857;
+}
+
+.btn-success:hover {
+  transform: translateY(-1px);
+}
+
+.btn-info:hover {
+  transform: translateY(-1px);
+}
+
+.btn-warning:hover {
+  transform: translateY(-1px);
+}
+
+.modal-header {
+  background-color: #c44569;
+  color: white;
+}
+
+.modal-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+}
+
+footer {
+  font-family: "Open Sans", sans-serif;
+  background-color: #2b2b2b;
+  color: rgba(255, 255, 255, 0.9);
+}
