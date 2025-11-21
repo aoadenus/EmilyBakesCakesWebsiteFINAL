@@ -928,6 +928,21 @@ body {
     margin-bottom: 40px;
 }
 
+.faq-category {
+    max-width: 1000px;
+    margin: 0 auto 50px;
+}
+
+.faq-category-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #C44569;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #F8EBD7;
+}
+
 .faq-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -942,7 +957,8 @@ body {
     border-radius: 8px;
 }
 
-.faq-item h3 {
+.faq-item h3,
+.faq-item h4 {
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
     font-weight: 600;
@@ -953,6 +969,36 @@ body {
 .faq-item p {
     font-size: 15px;
     line-height: 1.6;
+}
+
+.faq-item ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.faq-item ul li {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+
+.faq-cta {
+    max-width: 700px;
+    margin: 50px auto 0;
+    text-align: center;
+    padding: 40px 30px;
+    background: #F8EBD7;
+    border-radius: 12px;
+}
+
+.faq-cta p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.faq-cta .cta-button {
+    margin-top: 20px;
 }
 
 /* ============================================================================
