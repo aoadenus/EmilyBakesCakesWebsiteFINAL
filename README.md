@@ -18,7 +18,7 @@ This is a simple two-part system for a cake shop converted from React to pure HT
 - `staff/customers.php` - Customer list with search
 - `staff/customer_form.php` - Add/edit customers
 - `staff/orders.php` - Order list with filtering
-- `staff/order_create.php` - Create new orders
+- `staff/order_create.php` - **COMPREHENSIVE order form with full cake customization**
 - `staff/order_details.php` - View/edit orders and update status
 - `staff/products.php` - Product catalog
 - `staff/reports.php` - Business analytics
@@ -30,10 +30,16 @@ This is a simple two-part system for a cake shop converted from React to pure HT
 1. Double-click `index.html` to open in your browser
 2. Click through the navigation to see all pages
 
+### ⚠️ Important: PHP Files Need a PHP Server
+
+**Why does clicking `staff/login.php` download a file?**  
+The current web server (Python HTTP server) cannot run PHP code - it only serves static files. To run the staff backend, you need a **PHP server** like XAMPP or MAMP.
+
 ### Run the PHP Staff Backend
 
 **You'll need:**
-- XAMPP, MAMP, or similar (includes PHP + MySQL)
+- **XAMPP** (Windows/Mac) - Includes Apache + PHP + MySQL
+- **MAMP** (Mac) - Includes Apache + PHP + MySQL  
 - OR a school server with PHP and MySQL
 
 **Setup Steps:**
@@ -64,6 +70,7 @@ This is a simple two-part system for a cake shop converted from React to pure HT
    - Start Apache and MySQL in XAMPP/MAMP
    - Visit: `http://localhost/emily-bakes-cakes/`
    - Click "Staff Login" button to access the backend
+   - Once in the staff dashboard, click **"Create New Order"** to access the comprehensive order form
 
 ## Features
 
@@ -78,7 +85,14 @@ This is a simple two-part system for a cake shop converted from React to pure HT
 ### Staff Backend
 ✅ Dashboard with live statistics  
 ✅ **Customers:** Add, edit, search, view order history  
-✅ **Orders:** Create, view details, update status (Pending → In Progress → Completed)  
+✅ **Orders:** Full custom cake order form with:
+   - 6 cake flavors (Vanilla, Chocolate, Red Velvet, Lemon, Strawberry, Carrot)
+   - 15 fillings (creams, mousses, fruit fillings)
+   - 6 icing flavors (buttercream, cream cheese, whipped cream, ganache, fondant)
+   - 33 icing colors (classic, pastel, vibrant, elegant, earth tones, dark)
+   - 7 sizes (6"-12" rounds, quarter/half/full sheets)
+   - Custom writing, decorations, special instructions
+   - Auto-calculated 50% deposit
 ✅ **Products:** Browse catalog with pricing  
 ✅ **Reports:** Customer count, order count, revenue totals  
 ✅ Bootstrap 5 styling (modern, professional look)
@@ -86,8 +100,11 @@ This is a simple two-part system for a cake shop converted from React to pure HT
 ## Sample Data Included
 
 After running `database-schema.sql`, you'll have:
-- **8 products** (Birthday Celebration, Black Forest, Lemon Doberge, etc.)
-- Ready to add your own customers and orders!
+- **8 products** (Birthday Celebration, Black Forest, Red Velvet, Lemon Doberge, etc.)
+- **5 sample customers** (with phone, email, VIP status)
+- **3 sample staff users** (owner, manager, sales - password: "password123")
+- **3 sample orders** (showing different cake types and decorations)
+- Ready to add your own data!
 
 ## Design Credits
 
@@ -187,6 +204,9 @@ emily-bakes-cakes/
 
 **Problem:** "Cannot connect to database"  
 **Solution:** Start MySQL in XAMPP/MAMP control panel
+
+**Problem:** Clicking `staff/login.php` downloads a file instead of displaying the page  
+**Solution:** This is normal in Replit - PHP files need a PHP server (Apache) to run. Follow the setup steps above to install XAMPP/MAMP on your local computer.
 
 ## Getting Help
 
