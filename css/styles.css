@@ -1,0 +1,1031 @@
+/* ============================================================================
+   EMILY BAKES CAKES - MAIN STYLESHEET
+   Pure HTML/CSS Version
+   Colors: #F8EBD7 (cream), #C44569 (raspberry pink), #2B2B2B (charcoal)
+   Fonts: Playfair Display (headings), Poppins (subheadings), Open Sans (body)
+   ============================================================================ */
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #F8EBD7;
+    color: #2B2B2B;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================================================
+   NAVIGATION BAR
+   ============================================================================ */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #C44569;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    height: 60px;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(196, 69, 105, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 16px rgba(90, 56, 37, 0.2);
+}
+
+.nav-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 22px;
+    transition: opacity 0.3s;
+}
+
+.logo:hover {
+    opacity: 0.9;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    opacity: 1;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: white;
+}
+
+.staff-login-btn {
+    background: white;
+    color: #C44569;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s;
+    margin-left: 10px;
+}
+
+.staff-login-btn:hover {
+    background: #F8EBD7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobile-menu-btn span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ============================================================================
+   HERO SECTION (Homepage)
+   ============================================================================ */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 60px;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/src/assets/hero-image.jpeg') center/cover;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(43, 43, 43, 0.5), rgba(43, 43, 43, 0.7));
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 1000px;
+    padding: 20px;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 8vw, 72px);
+    font-weight: 800;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.hero-divider {
+    width: 200px;
+    height: 4px;
+    background: #C44569;
+    margin: 0 auto 30px;
+}
+
+.hero-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 600;
+    color: #F8EBD7;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.8);
+}
+
+.hero-subtitle .highlight {
+    color: #C44569;
+}
+
+.hero-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    color: #F8EBD7;
+    margin-bottom: 40px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #C44569;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 20px 64px;
+    border-radius: 16px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 8px 24px rgba(196, 69, 105, 0.4);
+}
+
+.cta-button:hover {
+    background: #D45579;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(196, 69, 105, 0.6);
+}
+
+/* ============================================================================
+   FEATURES SECTION
+   ============================================================================ */
+.features {
+    padding: 80px 20px;
+    background: #F8EBD7;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.feature-icon {
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #2B2B2B;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    font-size: 16px;
+    color: #5A3825;
+    line-height: 1.6;
+}
+
+/* ============================================================================
+   SPOTLIGHT/CAROUSEL SECTION
+   ============================================================================ */
+.spotlight {
+    padding: 80px 20px;
+    background: white;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center;
+    color: #2B2B2B;
+    margin-bottom: 50px;
+}
+
+.carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.carousel-container {
+    position: relative;
+    height: 500px;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.carousel-content {
+    padding: 30px;
+    background: white;
+}
+
+.carousel-content h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: #2B2B2B;
+    margin-bottom: 10px;
+}
+
+.carousel-content p {
+    font-size: 16px;
+    color: #5A3825;
+    margin-bottom: 15px;
+}
+
+.price {
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #C44569;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(196, 69, 105, 0.9);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: #C44569;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev {
+    left: -60px;
+}
+
+.carousel-btn.next {
+    right: -60px;
+}
+
+/* ============================================================================
+   TESTIMONIALS SECTION
+   ============================================================================ */
+.testimonials {
+    padding: 80px 20px;
+    background: #F8EBD7;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.stars {
+    color: #FFD700;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.testimonial-card p {
+    font-size: 16px;
+    font-style: italic;
+    color: #5A3825;
+    margin-bottom: 15px;
+}
+
+.testimonial-card strong {
+    font-family: 'Poppins', sans-serif;
+    color: #2B2B2B;
+}
+
+/* ============================================================================
+   CTA SECTION
+   ============================================================================ */
+.cta-section {
+    padding: 80px 20px;
+    background: #C44569;
+    text-align: center;
+    color: white;
+}
+
+.cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.cta-section p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* ============================================================================
+   PAGE HERO (for Menu, About, Contact)
+   ============================================================================ */
+.page-hero {
+    padding: 120px 20px 60px;
+    text-align: center;
+    background: linear-gradient(135deg, #C44569 0%, #8B3A5E 100%);
+    color: white;
+    margin-top: 60px;
+}
+
+.page-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.page-hero p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ============================================================================
+   MENU PAGE
+   ============================================================================ */
+.menu-section {
+    padding: 60px 20px;
+}
+
+.menu-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.tab-btn {
+    background: white;
+    color: #2B2B2B;
+    border: 2px solid #C44569;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+    background: #C44569;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.menu-card {
+    background: #FAF5F0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(90, 56, 37, 0.08);
+    transition: all 0.2s;
+    padding: 16px;
+}
+
+.menu-card:hover {
+    box-shadow: 0 4px 16px rgba(196, 69, 105, 0.15);
+    transform: translateY(-4px);
+}
+
+.menu-card-image {
+    height: 240px;
+    background: linear-gradient(135deg, #F8EBD7 0%, #FAF5F0 100%);
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.menu-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2B2B2B;
+    margin-bottom: 8px;
+}
+
+.menu-card p {
+    font-size: 14px;
+    color: #5A3825;
+    line-height: 1.5;
+}
+
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 20px;
+}
+
+.color-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hex-code {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    color: #5A3825;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+    letter-spacing: 0.5px;
+}
+
+.color-swatch {
+    width: 100%;
+    height: 100px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.color-card span:not(.hex-code) {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #2B2B2B;
+}
+
+/* ============================================================================
+   ABOUT PAGE
+   ============================================================================ */
+.about-hero {
+    padding: 150px 20px 80px;
+    text-align: center;
+    background: linear-gradient(120deg, #2B2B2B 0%, #3D2A2A 30%, #C44569 60%, #F8EBD7 100%);
+    margin-top: 60px;
+}
+
+.gradient-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 8vw, 64px);
+    font-weight: 700;
+    background: linear-gradient(135deg, #F8EBD7 0%, #C44569 50%, #F8EBD7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+}
+
+.handwriting {
+    font-family: 'Lucida Handwriting', cursive;
+    font-size: clamp(20px, 4vw, 28px);
+    font-style: italic;
+    color: #F8EBD7;
+}
+
+.about-story {
+    padding: 80px 20px;
+    background: #F8EBD7;
+}
+
+.about-story h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.story-content {
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.story-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.timeline {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.timeline-year {
+    flex-shrink: 0;
+    width: 80px;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #C44569;
+}
+
+.timeline-content h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.timeline-content p {
+    font-size: 16px;
+    color: #5A3825;
+}
+
+.values {
+    padding: 80px 20px;
+    background: white;
+}
+
+.values h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.value-card {
+    text-align: center;
+    padding: 30px;
+}
+
+.value-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.value-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.value-card p {
+    font-size: 16px;
+    color: #5A3825;
+    line-height: 1.6;
+}
+
+/* ============================================================================
+   CONTACT PAGE
+   ============================================================================ */
+.contact-content {
+    padding: 60px 20px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.contact-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    color: #C44569;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #5A3825;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.workflow-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.workflow-step {
+    display: flex;
+    align-items: start;
+    gap: 15px;
+}
+
+.step-icon {
+    width: 48px;
+    height: 48px;
+    background: #C44569;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.step-content p {
+    font-size: 13px;
+    color: #5A3825;
+    line-height: 1.5;
+}
+
+.phone-link {
+    color: #C44569;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.phone-link:hover {
+    text-decoration: underline;
+}
+
+.contact-info-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-icon {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.contact-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.contact-card a {
+    color: #C44569;
+    text-decoration: none;
+}
+
+.contact-card a:hover {
+    text-decoration: underline;
+}
+
+.small {
+    font-size: 14px;
+    color: #5A3825;
+}
+
+.map-section {
+    padding: 60px 20px;
+    background: #F8EBD7;
+}
+
+.map-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.map-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.faq-section {
+    padding: 60px 20px;
+    background: white;
+}
+
+.faq-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    padding: 20px;
+    background: #F8EBD7;
+    border-radius: 8px;
+}
+
+.faq-item h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #C44569;
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ============================================================================
+   FOOTER
+   ============================================================================ */
+.footer {
+    background: #2B2B2B;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 40px 20px 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-col h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.footer-col p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 8px;
+}
+
+.footer-col a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover {
+    color: #C44569;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+@media (max-width: 1024px) {
+    .nav-menu {
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        width: 300px;
+        height: calc(100vh - 60px);
+        background: #C44569;
+        flex-direction: column;
+        padding: 40px 20px;
+        transition: left 0.3s ease;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        align-items: flex-start;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-link {
+        width: 100%;
+        padding: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .staff-login-btn {
+        margin-left: 0;
+        margin-top: 20px;
+        display: block;
+        text-align: center;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .carousel-btn.prev {
+        left: 10px;
+    }
+
+    .carousel-btn.next {
+        right: 10px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .features-grid,
+    .testimonials-grid,
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-title {
+        font-size: 42px;
+    }
+
+    .hero-subtitle {
+        font-size: 24px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
