@@ -1,53 +1,62 @@
-"use client"
-
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
-import { Cake, ArrowLeft, Mail, Phone } from "lucide-react"
-import Link from "next/link"
+import Link from 'next/link'
 
 export default function ForgotPasswordPage() {
-  const [showContactModal, setShowContactModal] = useState(false)
-
   return (
-    <div className="min-h-screen flex items-center justify-center p-4" style={{ backgroundColor: "#F8EBD7" }}>
-      <div className="w-full max-w-md">
+    <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem', backgroundColor: '#F8EBD7' }}>
+      <div style={{ width: '100%', maxWidth: '28rem' }}>
         {/* Logo/Header */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 mb-4">
-            <Cake className="w-12 h-12" style={{ color: "#C44569" }} />
-          </div>
-          <h1 className="text-4xl font-bold mb-2" style={{ fontFamily: "Playfair Display, serif", color: "#2B2B2B" }}>
+        <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+          <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🎂</div>
+          <h1 style={{ fontSize: '2.25rem', fontWeight: 'bold', marginBottom: '0.5rem', fontFamily: 'Playfair Display, serif', color: '#2B2B2B' }}>
             Emily Bakes Cakes
           </h1>
         </div>
 
-        {/* Forgot Password Card */}
-        <Card className="shadow-lg border-2" style={{ borderColor: "#C44569" }}>
-          <CardHeader>
-            <CardTitle style={{ fontFamily: "Poppins, sans-serif", color: "#2B2B2B" }}>Password Reset</CardTitle>
-            <CardDescription style={{ fontFamily: "Open Sans, sans-serif" }}>
-              Password recovery is managed by our IT partner
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="p-6 rounded-lg text-center" style={{ backgroundColor: "#F8EBD7" }}>
-              <p className="text-lg font-semibold mb-2" style={{ fontFamily: "Poppins, sans-serif", color: "#2B2B2B" }}>
-                Password Reset Handled By
-              </p>
-              <p
-                className="text-2xl font-bold mb-4"
-                style={{ fontFamily: "Playfair Display, serif", color: "#C44569" }}
-              >
-                Averium Solutions
+        {/* Password Reset Card */}
+        <div style={{ boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)', border: '2px solid #C44569', borderRadius: '0.5rem', padding: '1.5rem', backgroundColor: '#fff' }}>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem', fontFamily: 'Poppins, sans-serif', color: '#2B2B2B' }}>Password Reset</h2>
+          <p style={{ fontSize: '0.875rem', color: '#666', marginBottom: '1.5rem', fontFamily: 'Open Sans, sans-serif' }}>
+            Password recovery is managed by our IT partner
+          </p>
+
+          <div style={{ padding: '1.5rem', borderRadius: '0.5rem', backgroundColor: '#F8EBD7', textAlign: 'center', marginBottom: '1.5rem' }}>
+            <p style={{ fontSize: '1.125rem', fontWeight: '600', marginBottom: '0.5rem', fontFamily: 'Poppins, sans-serif', color: '#2B2B2B' }}>
+              Password Reset Handled By
+            </p>
+            <p style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem', fontFamily: 'Playfair Display, serif', color: '#C44569' }}>
+              Averium Solutions
+            </p>
+            <p style={{ fontSize: '0.875rem', marginBottom: '1rem', color: '#666', fontFamily: 'Open Sans, sans-serif' }}>
+              Contact them for password recovery assistance
+            </p>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <div>
+              <p style={{ fontSize: '0.875rem', fontWeight: '600', marginBottom: '0.25rem', fontFamily: 'Poppins, sans-serif', color: '#2B2B2B' }}>📧 Email</p>
+              <a href="mailto:support@averium.com" style={{ color: '#C44569', textDecoration: 'none', fontSize: '0.875rem', fontFamily: 'Open Sans, sans-serif' }}>
+                support@averium.com
+              </a>
+            </div>
+            <div>
+              <p style={{ fontSize: '0.875rem', fontWeight: '600', marginBottom: '0.25rem', fontFamily: 'Poppins, sans-serif', color: '#2B2B2B' }}>📞 Phone</p>
+              <a href="tel:+1234567890" style={{ color: '#C44569', textDecoration: 'none', fontSize: '0.875rem', fontFamily: 'Open Sans, sans-serif' }}>
+                +1 (234) 567-890
+              </a>
+            </div>
+          </div>
+
+          <Link
+            href="/login"
+            style={{ display: 'block', marginTop: '1.5rem', padding: '0.75rem', backgroundColor: '#C44569', color: 'white', textDecoration: 'none', borderRadius: '0.375rem', textAlign: 'center', fontFamily: 'Poppins, sans-serif', fontWeight: '600' }}
+          >
+            ← Back to Login
+          </Link>
+        </div>
+      </div>
+    </div>
+  )
+}
               </p>
               <p className="text-sm mb-4" style={{ fontFamily: "Open Sans, sans-serif", color: "#2B2B2B" }}>
                 Please contact our IT support team to reset your password securely.

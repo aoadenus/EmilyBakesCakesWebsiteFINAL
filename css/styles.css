@@ -553,6 +553,8 @@ body {
 .menu-card-image {
     height: 160px;
     background: linear-gradient(135deg, #F8EBD7 0%, #FAF5F0 100%);
+    background-size: cover;
+    background-position: center;
     border-radius: 8px;
     margin-bottom: 16px;
     overflow: hidden;

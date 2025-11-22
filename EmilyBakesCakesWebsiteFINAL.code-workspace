@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../../EBC CAKE IMAGES"
+		},
+		{
+			"path": "../../baker-dashboard/baker"
+		},
+		{
+			"path": "../../baker-dashboard/css"
+		},
+		{
+			"path": "../../baker-dashboard/includes"
+		}
+	],
+	"settings": {}
+}

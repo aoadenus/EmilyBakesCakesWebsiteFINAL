@@ -1,153 +1,90 @@
-"use client"
-
-import type React from "react"
-
-import { useState } from "react"
-import { useRouter } from "next/navigation"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { authenticateUser } from "@/lib/auth"
-import { useToast } from "@/hooks/use-toast"
-import { Cake } from "lucide-react"
-import Link from "next/link"
+import Link from 'next/link'
 
 export default function LoginPage() {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [rememberMe, setRememberMe] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
-  const router = useRouter()
-  const { toast } = useToast()
-
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsLoading(true)
-
-    // Simulate API delay
-    await new Promise((resolve) => setTimeout(resolve, 500))
-
-    const user = authenticateUser(email, password)
-
-    if (user) {
-      // Store in localStorage (mock session)
-      localStorage.setItem("user", JSON.stringify(user))
-
-      // Handle remember me
-      if (rememberMe) {
-        document.cookie = `rememberedEmail=${email}; max-age=${60 * 60 * 24 * 30}; path=/`
-      }
-
-      toast({
-        title: "Login Successful",
-        description: `Welcome back, ${user.name}!`,
-      })
-
-      // Redirect based on role
-      setTimeout(() => {
-        router.push(`/dashboard/${user.role}`)
-      }, 500)
-    } else {
-      toast({
-        variant: "destructive",
-        title: "Login Failed",
-        description: "Invalid email or password. Please try again.",
-      })
-      setIsLoading(false)
-    }
-  }
-
   return (
-    <div className="min-h-screen flex items-center justify-center p-4" style={{ backgroundColor: "#F8EBD7" }}>
-      <div className="w-full max-w-md">
+    <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem', backgroundColor: '#F8EBD7' }}>
+      <div style={{ width: '100%', maxWidth: '28rem' }}>
         {/* Logo/Header */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 mb-4">
-            <Cake className="w-12 h-12" style={{ color: "#C44569" }} />
-          </div>
-          <h1 className="text-4xl font-bold mb-2" style={{ fontFamily: "Playfair Display, serif", color: "#2B2B2B" }}>
+        <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+          <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🎂</div>
+          <h1 style={{ fontSize: '2.25rem', fontWeight: 'bold', marginBottom: '0.5rem', fontFamily: 'Playfair Display, serif', color: '#2B2B2B' }}>
             Emily Bakes Cakes
           </h1>
-          <p className="text-lg" style={{ color: "#C44569", fontFamily: "Poppins, sans-serif" }}>
+          <p style={{ fontSize: '1.125rem', color: '#C44569', fontFamily: 'Poppins, sans-serif' }}>
             Staff Portal
           </p>
         </div>
 
         {/* Login Card */}
-        <Card className="shadow-lg border-2" style={{ borderColor: "#C44569" }}>
-          <CardHeader>
-            <CardTitle style={{ fontFamily: "Poppins, sans-serif", color: "#2B2B2B" }}>Sign In</CardTitle>
-            <CardDescription style={{ fontFamily: "Open Sans, sans-serif" }}>
-              Enter your credentials to access the staff portal
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={handleLogin} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="email" style={{ fontFamily: "Poppins, sans-serif" }}>
-                  Email
-                </Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="your.email@emilybakes.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  style={{ fontFamily: "Open Sans, sans-serif" }}
+        <div style={{ boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)', border: '2px solid #C44569', borderRadius: '0.5rem', padding: '1.5rem', backgroundColor: '#fff' }}>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem', fontFamily: 'Poppins, sans-serif', color: '#2B2B2B' }}>Sign In</h2>
+          <p style={{ fontSize: '0.875rem', color: '#666', marginBottom: '1.5rem', fontFamily: 'Open Sans, sans-serif' }}>
+            Enter your credentials to access the staff portal
+          </p>
+
+          <form action="/api/login" method="POST" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <div>
+              <label htmlFor="email" style={{ fontFamily: 'Poppins, sans-serif', display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>
+                Email
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="your.email@emilybakes.com"
+                required
+                style={{ width: '100%', padding: '0.5rem 0.75rem', border: '1px solid #ddd', borderRadius: '0.375rem', fontFamily: 'Open Sans, sans-serif' }}
+              />
+            </div>
+
+            <div>
+              <label htmlFor="password" style={{ fontFamily: 'Poppins, sans-serif', display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>
+                Password
+              </label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Enter your password"
+                required
+                style={{ width: '100%', padding: '0.5rem 0.75rem', border: '1px solid #ddd', borderRadius: '0.375rem', fontFamily: 'Open Sans, sans-serif' }}
+              />
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <input
+                  id="remember"
+                  name="remember"
+                  type="checkbox"
+                  style={{ width: '1rem', height: '1rem' }}
                 />
+                <label htmlFor="remember" style={{ fontSize: '0.875rem', cursor: 'pointer', fontFamily: 'Open Sans, sans-serif' }}>
+                  Remember me
+                </label>
               </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="password" style={{ fontFamily: "Poppins, sans-serif" }}>
-                  Password
-                </Label>
-                <Input
-                  id="password"
-                  type="password"
-                  placeholder="Enter your password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  style={{ fontFamily: "Open Sans, sans-serif" }}
-                />
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-2">
-                  <Checkbox
-                    id="remember"
-                    checked={rememberMe}
-                    onCheckedChange={(checked) => setRememberMe(checked as boolean)}
-                  />
-                  <Label
-                    htmlFor="remember"
-                    className="text-sm cursor-pointer"
-                    style={{ fontFamily: "Open Sans, sans-serif" }}
-                  >
-                    Remember me
-                  </Label>
-                </div>
-                <Link
-                  href="/forgot-password"
-                  className="text-sm hover:underline"
-                  style={{ color: "#C44569", fontFamily: "Open Sans, sans-serif" }}
-                >
-                  Forgot password?
-                </Link>
-              </div>
-
-              <Button
-                type="submit"
-                className="w-full text-white"
-                disabled={isLoading}
-                style={{ backgroundColor: "#C44569", fontFamily: "Poppins, sans-serif" }}
+              <Link
+                href="/forgot-password"
+                style={{ fontSize: '0.875rem', color: '#C44569', textDecoration: 'none' }}
+                onMouseEnter={(e) => (e.currentTarget.style.textDecoration = 'underline')}
+                onMouseLeave={(e) => (e.currentTarget.style.textDecoration = 'none')}
               >
-                {isLoading ? "Signing in..." : "Sign In"}
-              </Button>
-            </form>
+                Forgot password?
+              </Link>
+            </div>
+
+            <button
+              type="submit"
+              style={{ width: '100%', backgroundColor: '#C44569', color: 'white', padding: '0.75rem', borderRadius: '0.375rem', border: 'none', fontFamily: 'Poppins, sans-serif', fontWeight: '600', cursor: 'pointer' }}
+            >
+              Sign In
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  )
+}
 
             {/* Demo Accounts */}
             <div className="mt-6 p-4 rounded-lg" style={{ backgroundColor: "#F8EBD7" }}>
