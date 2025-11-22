@@ -1,291 +1,252 @@
-# Emily Bakes Cakes - Integrated Customer & Staff Portal System
+# Emily Bakes Cakes - Simple HTML Website & Staff Portal
 
-**A complete two-part system for a cake shop with fully integrated customer website and staff portal.**
+**A clean, simple website for a custom cake bakery built with HTML, CSS, and JavaScript only.**
 
 ## ✨ System Overview
 
-This is now a **unified PHP-based system** with seamless integration between:
+This is a **pure HTML/CSS/JavaScript system** with no complex frameworks:
 
 1. **Customer-Facing Website** (Public)
    - Responsive design for all devices
    - Browse menu, read about page, contact info
    - "Staff Login" button in navigation
 
-2. **Staff Portal** (Secure Authentication)
+2. **Staff Portal** (Simple Authentication)
    - Role-based dashboard access
-   - Order management, customer database, reports
+   - Mock data for demonstration
    - Demo accounts for testing all roles
 
-**Both systems are now integrated and run locally on XAMPP!**
+**Both systems run with a simple Python web server - no database or backend required!**
 
 ---
 
 ## 📋 What You Have Now
 
-### Public Website Pages (PHP-based)
-- **`index.php`** - Home page with hero section and testimonials
-- **`menu.php`** - Menu with tabbed product categories
-- **`about.php`** - Company story and history
-- **`contact.php`** - Contact information, hours, ordering workflow
+### Public Website Pages (HTML-based)
+- **`index.html`** - Home page with hero section and testimonials
+- **`menu.html`** - Menu with tabbed product categories
+- **`about.html`** - Company story and FAQ
+- **`contact.html`** - Contact information, hours, ordering workflow
 - **`css/styles.css`** - Responsive styling (Emily Bakes Cakes branding)
 - **`js/script.js`** - Mobile menu, carousel, tabs
 
-### Staff Portal Pages (New/Improved)
-- **`staff/login.php`** - Improved login page with branding
-- **`staff/dashboard.php`** - Main staff dashboard (new design)
-- **`staff/logout.php`** - Secure session cleanup
-- **`staff/orders.php`** - Order management
-- **`staff/customers.php`** - Customer list and search
-- **`staff/products.php`** - Product catalog
-- **`staff/reports.php`** - Business analytics
-- **`staff/includes/`** - Database, authentication, shared components
+### Staff Portal Pages (HTML-based)
+- **`staff-login.html`** - Staff login page with branding
+- **`dashboard.html`** - Role-based staff dashboard
+- **`forgot-password.html`** - Password reset information page
+- **`data.js`** - Mock data (orders, customers, products)
 
 ### Demo Credentials (Built-in)
 Five pre-configured staff roles for testing:
-- Manager
-- Sales Staff
-- Baker
-- Decorator
-- Accountant
+- **Manager:** manager / password
+- **Sales:** sales / password
+- **Baker:** baker / password
+- **Decorator:** decorator / password
+- **Accountant:** accountant / password
 
 ---
 
-## 🚀 Quick Start (5 Minutes)
+## 🚀 Quick Start (1 Minute)
 
-### Prerequisites
-- **XAMPP** installed (Windows or Mac)
-- **This project folder** in XAMPP's htdocs
+### Option 1: Using Python (Recommended)
 
-### 1. Copy Project to XAMPP
-```
-C:\xampp\htdocs\emily-bakes-cakes
-(Windows)
+1. **Open Command Prompt/Terminal**
+2. **Navigate to the project folder:**
+   ```bash
+   cd c:\xampp\htdocs\EmilyBakesCakesWebsiteFINAL
+   ```
+3. **Start the server:**
+   ```bash
+   python -m http.server 8000
+   ```
+   Or double-click: **`START_SERVER.bat`**
 
-/Applications/XAMPP/htdocs/emily-bakes-cakes
-(Mac)
-```
+4. **Open in browser:**
+   ```
+   http://localhost:8000
+   ```
 
-### 2. Start XAMPP Services
-- Open XAMPP Control Panel
-- Click "Start" next to Apache
-- Click "Start" next to MySQL
-- Wait for green status
+### Option 2: Using XAMPP (Alternative)
 
-### 3. Access the Website
-**Customer Website:**
-```
-http://localhost/emily-bakes-cakes/index.php
-```
-
-**Staff Portal:**
-```
-http://localhost/emily-bakes-cakes/staff/login.php
-```
-
-### 4. Login with Demo Credentials
-```
-Email: manager@emilybakes.com
-Password: Demo2024!
-```
-
-### 5. Explore!
-- Click around the customer website
-- Click "Staff Login" button
-- Log in and explore the staff dashboard
-- Click "Back to Website" to return
+1. **Start XAMPP Apache** (no MySQL needed)
+2. **Open in browser:**
+   ```
+   http://localhost/EmilyBakesCakesWebsiteFINAL/index.html
+   ```
 
 ---
 
-## 📚 Detailed Setup Guide
-
-See **[XAMPP_SETUP_GUIDE.md](./XAMPP_SETUP_GUIDE.md)** for:
-- Step-by-step XAMPP installation
-- Database setup (optional)
-- Troubleshooting
-- File structure explanation
-- Security notes
-
-See **[QUICK_START.md](./QUICK_START.md)** for:
-- 5-minute quick reference
-- All demo credentials
-- Important URLs
-- Navigation flow
-- Quick tips
-
----
-
-## 🔐 Demo Staff Accounts
-   - Copy and paste the contents of `database-schema.sql`
-   - Click "Go" to create all tables and sample data
-
-2. **Update database credentials**
-   - Open `staff/includes/db.php` in a text editor
-   - Change these lines to match your MySQL setup:
-     ```php
-     $db_host = 'localhost';        // Usually localhost
-     $db_name = 'emily_bakes_cakes';
-     $db_user = 'root';             // Your MySQL username
-     $db_pass = '';                 // Your MySQL password
-     ```
-
-3. **Copy project to web server**
-   - **XAMPP:** Copy this entire folder to `C:/xampp/htdocs/`
-   - **MAMP:** Copy to `/Applications/MAMP/htdocs/`
-   - **School server:** Upload via FTP as instructed
-
-4. **Open in browser**
-   - Start Apache and MySQL in XAMPP/MAMP
-   - Visit: `http://localhost/emily-bakes-cakes/`
-   - Click "Staff Login" button to access the backend
-   - Once in the staff dashboard, click **"Create New Order"** to access the comprehensive order form
-
-## Features
+## 🔐 How to Use
 
 ### Public Website
-✅ Responsive design (works on phones, tablets, desktops)  
-✅ Mobile hamburger menu  
-✅ Image carousel on home page  
-✅ Product tabs on menu page  
-✅ Brand colors: Cream (#F8EBD7), Pink (#C44569), Dark (#2B2B2B)  
-✅ Google Fonts: Playfair Display, Poppins, Open Sans
+1. Open `http://localhost:8000/index.html`
+2. Navigate through: Home → Menu → About → Contact
+3. Click "Staff Login" button to access staff portal
 
-### Staff Backend
-✅ Dashboard with live statistics  
-✅ **Customers:** Add, edit, search, view order history  
-✅ **Orders:** Full custom cake order form with:
-   - 6 cake flavors (Vanilla, Chocolate, Red Velvet, Lemon, Strawberry, Carrot)
-   - 15 fillings (creams, mousses, fruit fillings)
-   - 6 icing flavors (buttercream, cream cheese, whipped cream, ganache, fondant)
-   - 33 icing colors (classic, pastel, vibrant, elegant, earth tones, dark)
-   - 7 sizes (6"-12" rounds, quarter/half/full sheets)
-   - Custom writing, decorations, special instructions
-   - Auto-calculated 50% deposit
-✅ **Products:** Browse catalog with pricing  
-✅ **Reports:** Customer count, order count, revenue totals  
-✅ Bootstrap 5 styling (modern, professional look)
+### Staff Portal
+1. Click "Staff Login" or go to `http://localhost:8000/staff-login.html`
+2. Use demo credentials (e.g., **manager** / **password**)
+3. Select role to see role-specific dashboard
+4. Dashboard shows:
+   - Total Orders: 156
+   - This Week: 42
+   - Pending: 8
+   - Revenue: $5,240
+5. Click "Logout" to return to login
 
-## Sample Data Included
+---
 
-After running `database-schema.sql`, you'll have:
-- **8 products** (Birthday Celebration, Black Forest, Red Velvet, Lemon Doberge, etc.)
-- **5 sample customers** (with phone, email, VIP status)
-- **3 sample staff users** (owner, manager, sales - password: "password123")
-- **3 sample orders** (showing different cake types and decorations)
-- Ready to add your own data!
-
-## Design Credits
-
-- **Colors:** Vanilla Raspberry theme
-- **Fonts:** Google Fonts (free to use)
-- **Icons:** SVG graphics (custom)
-- **Framework:** Bootstrap 5 (via CDN, free)
-
-## Technologies
-
-| Component | Technology |
-|-----------|-----------|
-| Frontend Pages | HTML5, CSS3, Vanilla JavaScript |
-| Staff Backend | PHP 7.4+ |
-| Database | MySQL 5.7+ |
-| Styling | Custom CSS + Bootstrap 5 |
-| Server | Apache (via XAMPP/MAMP) |
-
-## File Structure
+## 📁 File Structure
 
 ```
-emily-bakes-cakes/
+EmilyBakesCakesWebsiteFINAL/
 ├── index.html              # Home page
 ├── menu.html               # Menu page
-├── about.html              # About page  
+├── about.html              # About page
 ├── contact.html            # Contact page
-├── database-schema.sql     # MySQL database setup
+├── staff-login.html        # Staff login
+├── dashboard.html          # Staff dashboard
+├── forgot-password.html    # Password reset info
+├── data.js                 # Mock data
+├── START_SERVER.bat        # Windows server launcher
 ├── css/
 │   └── styles.css         # All website styles
 ├── js/
 │   └── script.js          # Mobile menu, carousel, tabs
-├── images/                # Empty (add your own images)
-└── staff/                 # PHP backend
-    ├── login.php
-    ├── dashboard.php
-    ├── customers.php
-    ├── customer_form.php
-    ├── orders.php
-    ├── order_create.php
-    ├── order_details.php
-    ├── products.php
-    ├── reports.php
-    └── includes/
-        ├── db.php         # Database connection
-        ├── header.php     # Shared header
-        └── footer.php     # Shared footer
+└── public/
+    └── ebc-cake-images/   # 15 cake product images
 ```
 
-## Important Notes
+---
 
-⚠️ **This is for learning purposes only**
-- No real user authentication (anyone can access staff area)
-- No password encryption
-- SQL queries should use prepared statements (security improvement)
-- No payment processing
+## 🛠 Technologies Used
 
-💡 **Perfect for learning:**
-- HTML/CSS responsive design
-- Vanilla JavaScript (no frameworks)
-- PHP CRUD operations
-- MySQL database design
-- Bootstrap styling
+| Component | Technology | Complexity |
+|-----------|-----------|------------|
+| **Frontend Pages** | HTML5 | ✅ Simple |
+| **Styling** | CSS3 | ✅ Simple |
+| **Interactivity** | Vanilla JavaScript | ✅ Simple |
+| **Data** | JavaScript Objects | ✅ Simple |
+| **Server** | Python HTTP Server | ✅ Simple |
 
-## Assignment Ideas
+**No React. No TypeScript. No Node.js. No Database. No Complex Frameworks.**
 
-**Easy Enhancements (1-2 hours):**
-1. Add images to the menu page product cards
-2. Create a footer with social media links
-3. Add form validation to customer form
-4. Change the color scheme to your own brand
+---
 
-**Medium Enhancements (3-5 hours):**
-1. Add real login authentication with sessions
-2. Implement password hashing (bcrypt)
-3. Add pagination to customer/order lists
-4. Create a printable receipt page
-5. Add date filtering to reports
+## 🎨 Features
 
-**Advanced Enhancements (6+ hours):**
-1. Build a shopping cart for online ordering
-2. Integrate a payment API (Stripe, PayPal)
-3. Add email notifications (PHPMailer)
-4. Create PDF invoices (TCPDF, FPDF)
-5. Build a customer portal for tracking orders
-6. Add image upload for products
+### Public Website
+✅ Responsive design (mobile, tablet, desktop)
+✅ Mobile hamburger menu
+✅ Tabbed menu with 6 categories
+✅ 15 standard cakes with images and pricing
+✅ Brand colors: Cream (#F8EBD7), Pink (#C44569), Dark (#2B2B2B)
+✅ Google Fonts: Playfair Display, Poppins, Open Sans
 
-## Troubleshooting
+### Staff Portal
+✅ Simple login authentication (localStorage)
+✅ Role-based dashboards (5 roles)
+✅ Dashboard KPI cards
+✅ Mock data display
+✅ Logout functionality
+✅ Forgot password support page
 
-**Problem:** "Access denied for user 'root'@'localhost'"  
-**Solution:** Check your MySQL username/password in `staff/includes/db.php`
+---
 
-**Problem:** "Table 'customers' doesn't exist"  
-**Solution:** Run the SQL from `database-schema.sql` in phpMyAdmin
+## 📊 Mock Data Included
 
-**Problem:** Page shows PHP code instead of running  
-**Solution:** Make sure Apache is running and you're accessing via `http://localhost/`
+The `data.js` file includes:
+- **15 standard cakes** with images, descriptions, prices
+- **6 cake flavors** (Vanilla, Chocolate, Red Velvet, etc.)
+- **15 fillings** (buttercreams, mousses, fruit)
+- **27 icing colors** with hex codes
+- **6 icing flavors**
+- **30+ decorations**
+- **5 sample orders**
+- **8 sample customers**
+- **6 staff members**
 
-**Problem:** "Cannot connect to database"  
-**Solution:** Start MySQL in XAMPP/MAMP control panel
+---
 
-**Problem:** Clicking `staff/login.php` downloads a file instead of displaying the page  
-**Solution:** This is normal in Replit - PHP files need a PHP server (Apache) to run. Follow the setup steps above to install XAMPP/MAMP on your local computer.
+## 🔧 Customization Ideas
 
-## Getting Help
+**Easy (30 minutes):**
+1. Change colors in `css/styles.css`
+2. Add your own images to `public/ebc-cake-images/`
+3. Update contact information in `contact.html`
+4. Modify company story in `about.html`
 
-1. Check that Apache and MySQL are running (green lights in XAMPP/MAMP)
-2. Verify database credentials in `staff/includes/db.php`
-3. Check browser console for JavaScript errors (F12)
-4. Look at Apache error logs in XAMPP/MAMP
+**Medium (1-2 hours):**
+1. Add more products to `data.js`
+2. Create new dashboard pages
+3. Add form validation to login
+4. Create a customer order form
 
-## Credits
+**Advanced (3+ hours):**
+1. Connect to a real backend (Python Flask, Node.js)
+2. Add database (SQLite, PostgreSQL)
+3. Implement real authentication
+4. Add email notifications
+5. Create PDF invoice generation
 
-Built for CIS students learning web development. Feel free to modify, extend, and use for your coursework!
+---
 
-**Original Design:** Emily Bakes Cakes brand concept  
-**Code:** Converted from React to pure HTML/PHP for educational use  
-**License:** Free for educational purposes
+## 🐛 Troubleshooting
+
+**Problem:** Python server won't start
+**Solution:** Make sure Python is installed: `python --version`
+
+**Problem:** Port 8000 already in use
+**Solution:** Use different port: `python -m http.server 8080`
+
+**Problem:** Images not loading
+**Solution:** Check file paths in HTML match actual file locations
+
+**Problem:** Login doesn't work
+**Solution:** Make sure you're using exactly: **manager** / **password**
+
+**Problem:** Dashboard shows "Loading..."
+**Solution:** Clear browser localStorage and try again
+
+---
+
+## 📝 Development Rules
+
+This project follows **simple coding standards**:
+
+✅ **Allowed:** HTML, CSS, JavaScript, Python
+❌ **Not Allowed:** React, TypeScript, Node.js frameworks, complex build tools
+
+Keep it simple. Keep it maintainable. Keep it educational.
+
+---
+
+## 🎓 Learning Objectives
+
+Perfect for learning:
+- HTML structure and semantics
+- CSS responsive design
+- Vanilla JavaScript DOM manipulation
+- Client-side data management
+- Simple authentication concepts
+- Web server basics
+
+---
+
+## 📄 License
+
+Free for educational purposes. Modify and extend as needed for your projects.
+
+---
+
+## 🆘 Getting Help
+
+1. Check browser console for errors (F12)
+2. Verify Python server is running
+3. Clear browser cache and localStorage
+4. Check file paths are correct
+5. Review `data.js` for mock data structure
+
+---
+
+**Built for simplicity. No complex frameworks. Just HTML, CSS, and JavaScript.**

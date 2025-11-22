@@ -24,57 +24,16 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "python3 -m http.server 5000 --directory ."
-waitForPort = 5000
+args = "python3 -m http.server 8000 --directory ."
+waitForPort = 8000
 
 [workflows.workflow.metadata]
 outputType = "webview"
 
 [[ports]]
-localPort = 3000
-externalPort = 3000
-
-[[ports]]
-localPort = 5000
-externalPort = 80
-
-[[ports]]
-localPort = 34323
+localPort = 8000
 externalPort = 8000
-
-[[ports]]
-localPort = 34623
-externalPort = 3002
-
-[[ports]]
-localPort = 35509
-externalPort = 5173
-
-[[ports]]
-localPort = 36023
-externalPort = 5000
-
-[[ports]]
-localPort = 38731
-externalPort = 6000
-
-[[ports]]
-localPort = 39017
-externalPort = 4200
-
-[[ports]]
-localPort = 41563
-externalPort = 3003
-
-[[ports]]
-localPort = 43739
-externalPort = 6800
-
-[[ports]]
-localPort = 45117
-externalPort = 3001
 
 [deployment]
 deploymentTarget = "autoscale"
-run = ["npx", "vite", "preview", "--host", "0.0.0.0", "--port"]
-build = ["npm", "run", "build"]
+run = ["python3", "-m", "http.server", "8000", "--directory", "."]

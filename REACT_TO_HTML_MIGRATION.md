@@ -115,7 +115,7 @@ app/
 ```bash
 npm run dev
 ```
-Then visit: **http://localhost:3000**
+Then visit: **http://localhost:8000**
 
 ### Build for Production
 ```bash

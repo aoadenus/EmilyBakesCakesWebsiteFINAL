@@ -1,21 +1,13 @@
 {
   "name": "emily-bakes-cakes",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "description": "Emily Bakes Cakes - Custom Cake Bakery Website",
   "scripts": {
-    "build": "next build",
-    "dev": "next dev",
-    "start": "next start"
+    "serve": "python -m http.server 8000",
+    "start": "python -m http.server 8000"
   },
-  "dependencies": {
-    "next": "16.0.3",
-    "react": "19.2.0",
-    "react-dom": "19.2.0"
-  },
-  "devDependencies": {
-    "@types/node": "^22",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "typescript": "^5"
-  }
+  "keywords": ["bakery", "cakes", "website"],
+  "author": "Emily Bakes Cakes",
+  "license": "MIT"
 }

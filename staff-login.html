@@ -335,13 +335,16 @@
 
             <div class="demo-info">
                 <h3>Demo Credentials:</h3>
-                <p><strong>Username:</strong> admin</p>
-                <p><strong>Password:</strong> password</p>
-                <p>Or use any staff name as username with "password" as password</p>
+                <p><strong>Manager:</strong> manager / password</p>
+                <p><strong>Sales:</strong> sales / password</p>
+                <p><strong>Baker:</strong> baker / password</p>
+                <p><strong>Decorator:</strong> decorator / password</p>
+                <p><strong>Accountant:</strong> accountant / password</p>
             </div>
 
             <div class="back-link">
-                <a href="index.html">&larr; Back to Home</a>
+                <a href="index.html">&larr; Back to Home</a> |
+                <a href="forgot-password.html">Forgot Password?</a>
             </div>
         </div>
     </div>
@@ -417,14 +420,21 @@
         // Handle Login
         function handleLogin(event) {
             event.preventDefault();
-            const username = document.getElementById('username').value;
+            const username = document.getElementById('username').value.toLowerCase();
             const password = document.getElementById('password').value;
 
             // Simple demo authentication
             if (password === 'password') {
+                // Determine role based on username
+                const validRoles = ['manager', 'sales', 'baker', 'decorator', 'accountant'];
+                const role = validRoles.includes(username) ? username : 'staff';
+
                 // Store login in localStorage
                 localStorage.setItem('staffUser', username);
-                showDashboard();
+                localStorage.setItem('staffRole', role);
+
+                // Redirect to dashboard with role parameter
+                window.location.href = `dashboard.html?role=${role}`;
             } else {
                 alert('Invalid credentials. Use password: "password"');
             }
