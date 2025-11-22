@@ -38,11 +38,11 @@ This is a **pure HTML/CSS/JavaScript system** with no complex frameworks:
 
 ### Demo Credentials (Built-in)
 Five pre-configured staff roles for testing:
-- **Manager:** manager / password
-- **Sales:** sales / password
-- **Baker:** baker / password
-- **Decorator:** decorator / password
-- **Accountant:** accountant / password
+- **Manager:** manager@emilybakes.com / test
+- **Sales:** sales@emilybakes.com / test
+- **Baker:** baker@emilybakes.com / test
+- **Decorator:** decorator@emilybakes.com / test
+- **Accountant:** accountant@emilybakes.com / test
 
 ---
 
@@ -85,9 +85,9 @@ Five pre-configured staff roles for testing:
 
 ### Staff Portal
 1. Click "Staff Login" or go to `http://localhost:8000/staff-login.html`
-2. Use demo credentials (e.g., **manager** / **password**)
-3. Select role to see role-specific dashboard
-4. Dashboard shows:
+2. Click "Demo Credentials" dropdown to view available accounts
+3. Use demo credentials (e.g., **baker@emilybakes.com** / **test**)
+4. Dashboard shows role-specific view with:
    - Total Orders: 156
    - This Week: 42
    - Pending: 8
@@ -203,7 +203,7 @@ The `data.js` file includes:
 **Solution:** Check file paths in HTML match actual file locations
 
 **Problem:** Login doesn't work
-**Solution:** Make sure you're using exactly: **manager** / **password**
+**Solution:** Make sure you're using the correct format: **baker@emilybakes.com** / **test**
 
 **Problem:** Dashboard shows "Loading..."
 **Solution:** Clear browser localStorage and try again

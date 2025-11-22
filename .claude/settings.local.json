@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(if exist \".next\" rmdir /s /q \".next\")",
-      "Bash(if exist \"node_modules\" rmdir /s /q \"node_modules\")"
+      "Bash(if exist \"node_modules\" rmdir /s /q \"node_modules\")",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []

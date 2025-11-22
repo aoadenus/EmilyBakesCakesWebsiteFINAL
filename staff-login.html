@@ -104,6 +104,34 @@
             margin-top: 0;
             color: #C44569;
             font-size: 14px;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .demo-info h3:hover {
+            color: #A33555;
+        }
+
+        .demo-toggle {
+            font-size: 12px;
+            transition: transform 0.3s;
+        }
+
+        .demo-toggle.open {
+            transform: rotate(180deg);
+        }
+
+        .demo-credentials {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .demo-credentials.show {
+            max-height: 200px;
         }
 
         .back-link {
@@ -334,12 +362,17 @@
             </form>
 
             <div class="demo-info">
-                <h3>Demo Credentials:</h3>
-                <p><strong>Manager:</strong> manager / password</p>
-                <p><strong>Sales:</strong> sales / password</p>
-                <p><strong>Baker:</strong> baker / password</p>
-                <p><strong>Decorator:</strong> decorator / password</p>
-                <p><strong>Accountant:</strong> accountant / password</p>
+                <h3 onclick="toggleDemoCredentials()">
+                    Demo Credentials
+                    <span class="demo-toggle" id="demoToggle">▼</span>
+                </h3>
+                <div class="demo-credentials" id="demoCredentials">
+                    <p><strong>Manager:</strong> manager@emilybakes.com / test</p>
+                    <p><strong>Sales:</strong> sales@emilybakes.com / test</p>
+                    <p><strong>Baker:</strong> baker@emilybakes.com / test</p>
+                    <p><strong>Decorator:</strong> decorator@emilybakes.com / test</p>
+                    <p><strong>Accountant:</strong> accountant@emilybakes.com / test</p>
+                </div>
             </div>
 
             <div class="back-link">
@@ -417,17 +450,34 @@
 
     <script src="data.js"></script>
     <script>
+        // Toggle demo credentials dropdown
+        function toggleDemoCredentials() {
+            const credentials = document.getElementById('demoCredentials');
+            const toggle = document.getElementById('demoToggle');
+            credentials.classList.toggle('show');
+            toggle.classList.toggle('open');
+        }
+
         // Handle Login
         function handleLogin(event) {
             event.preventDefault();
-            const username = document.getElementById('username').value.toLowerCase();
+            const username = document.getElementById('username').value.toLowerCase().trim();
             const password = document.getElementById('password').value;
 
             // Simple demo authentication
-            if (password === 'password') {
-                // Determine role based on username
-                const validRoles = ['manager', 'sales', 'baker', 'decorator', 'accountant'];
-                const role = validRoles.includes(username) ? username : 'staff';
+            if (password === 'test') {
+                // Extract role from email (e.g., manager@emilybakes.com -> manager)
+                let role = 'staff';
+
+                if (username.includes('@emilybakes.com')) {
+                    const emailRole = username.split('@')[0];
+                    const validRoles = ['manager', 'sales', 'baker', 'decorator', 'accountant'];
+                    role = validRoles.includes(emailRole) ? emailRole : 'staff';
+                } else {
+                    // Support simple username format (backward compatibility)
+                    const validRoles = ['manager', 'sales', 'baker', 'decorator', 'accountant'];
+                    role = validRoles.includes(username) ? username : 'staff';
+                }
 
                 // Store login in localStorage
                 localStorage.setItem('staffUser', username);
@@ -436,7 +486,7 @@
                 // Redirect to dashboard with role parameter
                 window.location.href = `dashboard.html?role=${role}`;
             } else {
-                alert('Invalid credentials. Use password: "password"');
+                alert('Invalid credentials. Please check your email and password.');
             }
         }
 

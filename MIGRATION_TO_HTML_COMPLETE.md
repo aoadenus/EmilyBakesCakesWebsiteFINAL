@@ -205,13 +205,15 @@ Double-click: `START_SERVER.bat`
 
 Use these credentials to test the staff portal:
 
-| Role | Username | Password |
-|------|----------|----------|
-| Manager | manager | password |
-| Sales | sales | password |
-| Baker | baker | password |
-| Decorator | decorator | password |
-| Accountant | accountant | password |
+| Role | Email | Password |
+|------|-------|----------|
+| Manager | manager@emilybakes.com | test |
+| Sales | sales@emilybakes.com | test |
+| Baker | baker@emilybakes.com | test |
+| Decorator | decorator@emilybakes.com | test |
+| Accountant | accountant@emilybakes.com | test |
+
+**Note:** Demo credentials are hidden under a collapsible dropdown on the login page.
 
 ---
 

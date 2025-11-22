@@ -81,15 +81,10 @@ Then open your browser to: **http://localhost:8000**
 3. Click "Open with Live Server"
 4. Website opens automatically at `http://localhost:5500` or similar
 
-### Option 4: Node.js http-server
+### Option 4: XAMPP (Alternative)
 
-```bash
-npm install -g http-server
-cd c:\xampp\htdocs\EmilyBakesCakesWebsiteFINAL
-http-server
-```
-
-Then open: **http://localhost:8080**
+1. Start XAMPP Apache (no MySQL needed)
+2. Open: **http://localhost/EmilyBakesCakesWebsiteFINAL/index.html**
 
 ---
 
@@ -128,8 +123,9 @@ Then open: **http://localhost:8080**
 
 ### 👥 Staff Dashboard (staff-login.html)
 **Login Credentials (Demo):**
-- Username: `admin` (or any staff name)
-- Password: `password`
+- Email: `baker@emilybakes.com` (or any role email)
+- Password: `test`
+- Click "Demo Credentials" dropdown to see all accounts
 
 **Dashboard Features:**
 - Statistics cards (orders, revenue, customers)
@@ -340,8 +336,9 @@ Or use VS Code Live Server instead
 
 ### Q: Staff login not working
 **A:** Use credentials:
-- Username: `admin` (or any name from mockData.staff)
-- Password: `password`
+- Email: `baker@emilybakes.com` (or any role email)
+- Password: `test`
+- Click "Demo Credentials" to see all 5 accounts
 
 ### Q: How do I deploy this?
 **A:** Easy options:
