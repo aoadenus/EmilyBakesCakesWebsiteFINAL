@@ -1,0 +1,358 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Emily Bakes Cakes</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.php" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#F8EBD7">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                <span>Emily Bakes Cakes</span>
+            </a>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="index.php" class="nav-link">Home</a>
+                <a href="menu.php" class="nav-link active">Menu</a>
+                <a href="about.php" class="nav-link">About</a>
+                <a href="contact.php" class="nav-link">Contact</a>
+                <a href="staff/login.php" class="staff-login-btn">Staff Login</a>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <h1>Our Menu</h1>
+        <p>Explore our selection of cakes, flavors, and decorations</p>
+    </section>
+
+    <!-- Filter Tabs -->
+    <section class="menu-section">
+        <div class="container">
+            <div class="menu-tabs">
+                <button class="tab-btn active" onclick="showTab('standard-cakes')">Standard Cakes</button>
+                <button class="tab-btn" onclick="showTab('cake-flavors')">Cake Flavors</button>
+                <button class="tab-btn" onclick="showTab('fillings')">Fillings</button>
+                <button class="tab-btn" onclick="showTab('icing-colors')">Icing Colors</button>
+                <button class="tab-btn" onclick="showTab('icing-flavors')">Icing Flavors</button>
+                <button class="tab-btn" onclick="showTab('decorations')">Decorations</button>
+            </div>
+
+            <!-- Standard Cakes Tab -->
+            <div id="standard-cakes" class="tab-content active">
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <div class="menu-card-image"><img src="public/ebc-cake-images/Birthday.png" alt="Birthday Celebration"></div>
+                        <h3>Birthday Celebration</h3>
+                        <p>Classic yellow cake with white buttercream</p>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-image"><img src="public/ebc-cake-images/almondelight.jpg" alt="Almond Delight"></div>
+                        <h3>Almond Delight</h3>
+                        <p>Rich almond cake with almond buttercream</p>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-image"><img src="public/ebc-cake-images/lemoncreamcheese.jpg" alt="Lemon and Cream Cheese"></div>
+                        <h3>Lemon & Cream Cheese</h3>
+                        <p>Tangy lemon cake with cream cheese icing</p>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-image"><img src="public/ebc-cake-images/blackforest.jpg" alt="Black Forest"></div>
+                        <h3>Black Forest</h3>
+                        <p>Chocolate cake with cherry filling</p>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-image"><img src="public/ebc-cake-images/germanchocolate.jpg" alt="German Chocolate"></div>
+                        <h3>German Chocolate</h3>
+                        <p>Rich chocolate with pecan praline filling</p>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-image"><img src="public/ebc-cake-images/creamcheesecho.jpg" alt="Cream Cheese Chocolate"></div>
+                        <h3>Cream Cheese Chocolate</h3>
+                        <p>Decadent chocolate with cream cheese frosting</p>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-image"><img src="public/ebc-cake-images/italiancream.jpg" alt="Italian Cream"></div>
+                        <h3>Italian Cream</h3>
+                        <p>Light vanilla with cream cheese and pecans</p>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-image"><img src="public/ebc-cake-images/lemondoberge.jpg" alt="Lemon Doberge"></div>
+                        <h3>Lemon Doberge</h3>
+                        <p>Multi-layered lemon cake with lemon mousse</p>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-image"><img src="public/ebc-cake-images/chocganache.jpg" alt="Chocolate Ganache Cake"></div>
+                        <h3>Chocolate Ganache Cake</h3>
+                        <p>A moist chocolate cake layered with smooth, velvety ganache for a rich, decadent bite.</p>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-image"><img src="public/ebc-cake-images/chocolate doberge.jpg" alt="Chocolate Doberge"></div>
+                        <h3>Chocolate Doberge</h3>
+                        <p>A classic multi-layer chocolate cake filled with creamy chocolate pudding and covered in rich frosting.</p>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-image"><img src="public/ebc-cake-images/lemonchocolatedoberge.jpg" alt="½ & ½ Doberge"></div>
+                        <h3>½ & ½ Doberge (Lemon & Chocolate)</h3>
+                        <p>A half-lemon, half-chocolate layered doberge cake filled with smooth custard and finished with rich frosting.</p>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-image"><img src="public/ebc-cake-images/pecan praline.jpg" alt="Pecan Praline Cream Cheese"></div>
+                        <h3>Pecan Praline Cream Cheese</h3>
+                        <p>A soft, buttery cake layered with creamy praline filling and topped with rich pecan-studded cream-cheese frosting.</p>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-image"><img src="public/ebc-cake-images/chocobanana.jpg" alt="Chocolate Banana"></div>
+                        <h3>Chocolate Banana</h3>
+                        <p>A moist chocolate cake blended with ripe banana flavor, creating a rich, soft, and perfectly sweet combination.</p>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-image"><img src="public/ebc-cake-images/strawberrydelight.jpg" alt="Strawberry Delight"></div>
+                        <h3>Strawberry Delight</h3>
+                        <p>A light, fluffy cake layered with sweet strawberry filling and topped with creamy frosting for a fresh, fruity finish.</p>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-image"><img src="public/ebc-cake-images/cookies and cream.jpg" alt="Cookies and Cream"></div>
+                        <h3>Cookies and Cream</h3>
+                        <p>A soft vanilla-based cake mixed with crushed chocolate cookies and layered with creamy cookie-infused frosting.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cake Flavors Tab -->
+            <div id="cake-flavors" class="tab-content">
+                <div class="menu-grid">
+                    <div class="menu-card"><h3>Vanilla</h3><p>Classic vanilla flavor, timeless and elegant</p></div>
+                    <div class="menu-card"><h3>Almond</h3><p>Delicate almond with subtle nutty sweetness</p></div>
+                    <div class="menu-card"><h3>Yellow</h3><p>Traditional yellow cake, buttery and moist</p></div>
+                    <div class="menu-card"><h3>Devil's Food Chocolate</h3><p>Deep, rich dark chocolate with intense cocoa</p></div>
+                    <div class="menu-card"><h3>Chocolate</h3><p>Classic chocolate, rich and indulgent</p></div>
+                    <div class="menu-card"><h3>Strawberry</h3><p>Light strawberry flavor with fresh fruit</p></div>
+                </div>
+            </div>
+
+            <!-- Fillings Tab -->
+            <div id="fillings" class="tab-content">
+                <div class="menu-grid">
+                    <div class="menu-card"><h3>White Buttercream</h3><p>Smooth and creamy classic buttercream</p></div>
+                    <div class="menu-card"><h3>Chocolate Buttercream</h3><p>Rich chocolate with deep cocoa flavor</p></div>
+                    <div class="menu-card"><h3>Almond Buttercream</h3><p>Delicate almond-infused sweetness</p></div>
+                    <div class="menu-card"><h3>Cream Cheese</h3><p>Tangy and creamy balance</p></div>
+                    <div class="menu-card"><h3>Lemon Curd</h3><p>Bright and zesty sweet-tart filling</p></div>
+                    <div class="menu-card"><h3>Strawberry</h3><p>Fresh strawberry with real fruit</p></div>
+                    <div class="menu-card"><h3>Rum/Strawberry</h3><p>Strawberry with a hint of rum</p></div>
+                    <div class="menu-card"><h3>Raspberry</h3><p>Tart and sweet berry filling</p></div>
+                    <div class="menu-card"><h3>Pecan Praline</h3><p>Buttery praline with toasted pecans</p></div>
+                    <div class="menu-card"><h3>Chocolate Mousse</h3><p>Light and airy chocolate mousse</p></div>
+                    <div class="menu-card"><h3>Lemon Mousse</h3><p>Tangy lemon mousse, light and fluffy</p></div>
+                    <div class="menu-card"><h3>Strawberry Mousse</h3><p>Fruity strawberry mousse filling</p></div>
+                    <div class="menu-card"><h3>Raspberry Mousse</h3><p>Tart raspberry mousse</p></div>
+                    <div class="menu-card"><h3>White Chocolate Mousse</h3><p>Creamy white chocolate mousse</p></div>
+                    <div class="menu-card"><h3>Mango Mousse</h3><p>Tropical mango mousse filling</p></div>
+                </div>
+            </div>
+
+            <!-- Icing Colors Tab -->
+            <div id="icing-colors" class="tab-content">
+                <h3 style="text-align: center; margin-bottom: 2rem; color: #C44569;">Primary Colors</h3>
+                <div class="color-grid">
+                    <div class="color-card"><div class="color-swatch" style="background: #D7251C"></div><span>Red</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #0047A8"></div><span>Royal Blue</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #1F8F3A"></div><span>Green</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #F6D500"></div><span>Yellow</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #F57A00"></div><span>Orange</span></div>
+                </div>
+
+                <h3 style="text-align: center; margin: 3rem 0 2rem; color: #C44569;">Pastel Colors</h3>
+                <div class="color-grid">
+                    <div class="color-card"><div class="color-swatch" style="background: #F7C6D0"></div><span>Baby Pink</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #A7D8FF"></div><span>Baby Blue</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #BDECC6"></div><span>Pastel Green</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #FFF2A8"></div><span>Pastel Yellow</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #C8B5EA"></div><span>Lavender</span></div>
+                </div>
+
+                <h3 style="text-align: center; margin: 3rem 0 2rem; color: #C44569;">Neon Colors</h3>
+                <div class="color-grid">
+                    <div class="color-card"><div class="color-swatch" style="background: #FF6CA9"></div><span>Hot Pink</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #0096FF"></div><span>Sky Blue</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #7ED321"></div><span>Neon Green</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #FFE600"></div><span>Yellow (Neon)</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #FF8A00"></div><span>Orange (Neon)</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #6A3EC7"></div><span>Purple</span></div>
+                </div>
+
+                <h3 style="text-align: center; margin: 3rem 0 2rem; color: #C44569;">Fall Colors</h3>
+                <div class="color-grid">
+                    <div class="color-card"><div class="color-swatch" style="background: #8C1E14"></div><span>Fall Red</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #3D6B0C"></div><span>Fall Green</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #E9A200"></div><span>Fall Yellow</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #E55C00"></div><span>Fall Orange</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #5A2E1A"></div><span>Brown</span></div>
+                </div>
+
+                <h3 style="text-align: center; margin: 3rem 0 2rem; color: #C44569;">Additional Colors</h3>
+                <div class="color-grid">
+                    <div class="color-card"><div class="color-swatch" style="background: #F6E2B5"></div><span>Ivory</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #F9C700"></div><span>Golden Yellow</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #D4A017"></div><span>Gold</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #E85CA6"></div><span>Fuchsia</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #701B22"></div><span>Maroon</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #4A0C13"></div><span>Burgundy</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #C4471E"></div><span>Burnt Orange</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #32C7C7"></div><span>Turquoise</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #0A1A57"></div><span>Navy Blue</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #C4C4C4"></div><span>Gray / Silver</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #000000; border: 1px solid #E9E9E9;"></div><span>Black</span></div>
+                    <div class="color-card"><div class="color-swatch" style="background: #FFFFFF; border: 1px solid #E9E9E9;"></div><span>White</span></div>
+                </div>
+            </div>
+
+            <!-- Icing Flavors Tab -->
+            <div id="icing-flavors" class="tab-content">
+                <div class="menu-grid">
+                    <div class="menu-card"><h3>White Buttercream</h3><p>Classic smooth buttercream icing</p></div>
+                    <div class="menu-card"><h3>Chocolate Buttercream</h3><p>Rich chocolate buttercream</p></div>
+                    <div class="menu-card"><h3>Almond Buttercream</h3><p>Delicate almond-flavored icing</p></div>
+                    <div class="menu-card"><h3>White Chocolate Buttercream</h3><p>Creamy white chocolate icing</p></div>
+                    <div class="menu-card"><h3>Cream Cheese</h3><p>Tangy and smooth cream cheese icing</p></div>
+                    <div class="menu-card"><h3>Chocolate Ganache</h3><p>Glossy, rich chocolate ganache</p></div>
+                </div>
+            </div>
+
+            <!-- Decorations Tab -->
+            <div id="decorations" class="tab-content">
+                <div class="decorations-list">
+                    <div class="decoration-category">
+                        <h3>Floral & Edible Art</h3>
+                        <ul>
+                            <li>Buttercream Flowers (hand-piped)</li>
+                            <li>Fondant Decorations (custom designs)</li>
+                            <li>Silk Flowers (Iris, Rose, Daisy, Lily)</li>
+                            <li>Silk Butterflies</li>
+                            <li>Edible Sugar-Based "Photos" (customer provided)</li>
+                            <li>Fleur-de-Lis pics</li>
+                            <li>Rock Candy</li>
+                            <li>Rainbows</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="decoration-category">
+                        <h3>Themed Toys & Figures</h3>
+                        <ul>
+                            <li>Toy Trains</li>
+                            <li>Plastic Dinosaurs</li>
+                            <li>Various Dolls</li>
+                            <li>Construction Toys</li>
+                            <li>Race Cars</li>
+                            <li>Plastic Deer, Squirrels, Rabbits</li>
+                            <li>Camping Tent & Camping Fire</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="decoration-category">
+                        <h3>Celebration & Party Items</h3>
+                        <ul>
+                            <li>Plastic Ballet Slippers</li>
+                            <li>Plastic Baby Rattles</li>
+                            <li>Plastic Baby Bottle</li>
+                            <li>Plastic Graduation Cap</li>
+                            <li>Plastic Balloons</li>
+                            <li>Plastic Firework Explosions</li>
+                            <li>Plastic Star Explosion Insert</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="decoration-category">
+                        <h3>Nature & Outdoor</h3>
+                        <ul>
+                            <li>Plastic Fish</li>
+                            <li>Plastic Pine Trees</li>
+                            <li>Plastic Palm Trees</li>
+                            <li>Paper Parasols</li>
+                            <li>Plastic Pics (Flamingos, Fish, Mermaids, Flip Flops, Seashells)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="decoration-category">
+                        <h3>Ribbons & Flags</h3>
+                        <ul>
+                            <li>Ribbons (Red, Blue, Pink, Purple, Gold, Silver, Yellow, White, Green, Black)</li>
+                            <li>Flags (US, Canada, Mexico)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="decoration-category">
+                        <h3>Sports</h3>
+                        <ul>
+                            <li>Plastic Sports Equipment (Goal Posts, Soccer Nets, Basketball Nets)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Design Your Perfect Cake?</h2>
+            <p>Call us to discuss flavors, fillings, and decorations</p>
+            <a href="contact.php" class="cta-button">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Emily Bakes Cakes</h4>
+                    <p>Custom cakes crafted with love and tradition since 2003</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>2847 Westheimer Road<br>Houston, TX 77098</p>
+                    <p>Phone: (713) 555-CAKE</p>
+                    <p>Email: info@emilybakescakes.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Hours</h4>
+                    <p>Monday-Friday: 9am-6pm<br>Saturday: 9am-5pm<br>Sunday: Closed</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <p><a href="index.php">Home</a></p>
+                    <p><a href="menu.php">Menu</a></p>
+                    <p><a href="about.php">About</a></p>
+                    <p><a href="contact.php">Contact</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Emily Bakes Cakes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,53 +1,120 @@
-# Emily Bakes Cakes - Student Project
+# Emily Bakes Cakes - Integrated Customer & Staff Portal System
 
-This is a simple two-part system for a cake shop converted from React to pure HTML/PHP for academic use.
+**A complete two-part system for a cake shop with fully integrated customer website and staff portal.**
 
-## What You Have
+## ✨ System Overview
 
-**Part 1: Public HTML Website** (4 pages)
-- `index.html` - Home page with carousel and testimonials
-- `menu.html` - Menu with tabbed product categories
-- `about.html` - Company story and timeline
-- `contact.html` - Contact information and hours
-- `css/styles.css` - All styling (responsive, mobile-friendly)
-- `js/script.js` - Interactivity (mobile menu, carousel, tabs)
+This is now a **unified PHP-based system** with seamless integration between:
 
-**Part 2: PHP Staff Backend** (9 pages)
-- `staff/login.php` - Simple login (no authentication yet)
-- `staff/dashboard.php` - Business statistics overview
-- `staff/customers.php` - Customer list with search
-- `staff/customer_form.php` - Add/edit customers
-- `staff/orders.php` - Order list with filtering
-- `staff/order_create.php` - **COMPREHENSIVE order form with full cake customization**
-- `staff/order_details.php` - View/edit orders and update status
-- `staff/products.php` - Product catalog
-- `staff/reports.php` - Business analytics
-- `staff/includes/` - Database connection, header, footer
+1. **Customer-Facing Website** (Public)
+   - Responsive design for all devices
+   - Browse menu, read about page, contact info
+   - "Staff Login" button in navigation
 
-## Quick Start
+2. **Staff Portal** (Secure Authentication)
+   - Role-based dashboard access
+   - Order management, customer database, reports
+   - Demo accounts for testing all roles
 
-### View the Public Website (No Setup Needed!)
-1. Double-click `index.html` to open in your browser
-2. Click through the navigation to see all pages
+**Both systems are now integrated and run locally on XAMPP!**
 
-### ⚠️ Important: PHP Files Need a PHP Server
+---
 
-**Why does clicking `staff/login.php` download a file?**  
-The current web server (Python HTTP server) cannot run PHP code - it only serves static files. To run the staff backend, you need a **PHP server** like XAMPP or MAMP.
+## 📋 What You Have Now
 
-### Run the PHP Staff Backend
+### Public Website Pages (PHP-based)
+- **`index.php`** - Home page with hero section and testimonials
+- **`menu.php`** - Menu with tabbed product categories
+- **`about.php`** - Company story and history
+- **`contact.php`** - Contact information, hours, ordering workflow
+- **`css/styles.css`** - Responsive styling (Emily Bakes Cakes branding)
+- **`js/script.js`** - Mobile menu, carousel, tabs
 
-**You'll need:**
-- **XAMPP** (Windows/Mac) - Includes Apache + PHP + MySQL
-- **MAMP** (Mac) - Includes Apache + PHP + MySQL  
-- OR a school server with PHP and MySQL
+### Staff Portal Pages (New/Improved)
+- **`staff/login.php`** - Improved login page with branding
+- **`staff/dashboard.php`** - Main staff dashboard (new design)
+- **`staff/logout.php`** - Secure session cleanup
+- **`staff/orders.php`** - Order management
+- **`staff/customers.php`** - Customer list and search
+- **`staff/products.php`** - Product catalog
+- **`staff/reports.php`** - Business analytics
+- **`staff/includes/`** - Database, authentication, shared components
 
-**Setup Steps:**
+### Demo Credentials (Built-in)
+Five pre-configured staff roles for testing:
+- Manager
+- Sales Staff
+- Baker
+- Decorator
+- Accountant
 
-1. **Create the database**
-   - Open phpMyAdmin (usually at `http://localhost/phpmyadmin`)
-   - Create a new database called `emily_bakes_cakes`
-   - Click on the database, then click "SQL" tab
+---
+
+## 🚀 Quick Start (5 Minutes)
+
+### Prerequisites
+- **XAMPP** installed (Windows or Mac)
+- **This project folder** in XAMPP's htdocs
+
+### 1. Copy Project to XAMPP
+```
+C:\xampp\htdocs\emily-bakes-cakes
+(Windows)
+
+/Applications/XAMPP/htdocs/emily-bakes-cakes
+(Mac)
+```
+
+### 2. Start XAMPP Services
+- Open XAMPP Control Panel
+- Click "Start" next to Apache
+- Click "Start" next to MySQL
+- Wait for green status
+
+### 3. Access the Website
+**Customer Website:**
+```
+http://localhost/emily-bakes-cakes/index.php
+```
+
+**Staff Portal:**
+```
+http://localhost/emily-bakes-cakes/staff/login.php
+```
+
+### 4. Login with Demo Credentials
+```
+Email: manager@emilybakes.com
+Password: Demo2024!
+```
+
+### 5. Explore!
+- Click around the customer website
+- Click "Staff Login" button
+- Log in and explore the staff dashboard
+- Click "Back to Website" to return
+
+---
+
+## 📚 Detailed Setup Guide
+
+See **[XAMPP_SETUP_GUIDE.md](./XAMPP_SETUP_GUIDE.md)** for:
+- Step-by-step XAMPP installation
+- Database setup (optional)
+- Troubleshooting
+- File structure explanation
+- Security notes
+
+See **[QUICK_START.md](./QUICK_START.md)** for:
+- 5-minute quick reference
+- All demo credentials
+- Important URLs
+- Navigation flow
+- Quick tips
+
+---
+
+## 🔐 Demo Staff Accounts
    - Copy and paste the contents of `database-schema.sql`
    - Click "Go" to create all tables and sample data
 

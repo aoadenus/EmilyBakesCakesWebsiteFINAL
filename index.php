@@ -1,0 +1,167 @@
+<?php
+// Start session for any potential user tracking
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emily Bakes Cakes - Custom Cakes Crafted with Love</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.php" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#F8EBD7">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                <span>Emily Bakes Cakes</span>
+            </a>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="index.php" class="nav-link active">Home</a>
+                <a href="menu.php" class="nav-link">Menu</a>
+                <a href="about.php" class="nav-link">About</a>
+                <a href="contact.php" class="nav-link">Contact</a>
+                <a href="staff/login.php" class="staff-login-btn">Staff Login</a>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-image"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Emily Bakes Cakes</h1>
+            <div class="hero-divider"></div>
+            <h2 class="hero-subtitle">
+                Custom Cakes Crafted with<br>
+                <span class="highlight">Love and Tradition</span>
+            </h2>
+            <p class="hero-text">
+                We work exclusively by phone, visit, or email to ensure every cake is perfect for your special day.
+            </p>
+            <a href="tel:713-555-2253" class="cta-button">Call (713) 555-CAKE</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#C44569" stroke-width="2">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                    </div>
+                    <h3>Handcrafted with Love</h3>
+                    <p>Every cake is made from scratch using premium ingredients and traditional techniques.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#C44569" stroke-width="2">
+                            <circle cx="12" cy="8" r="7"/>
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+                        </svg>
+                    </div>
+                    <h3>Award-Winning Recipes</h3>
+                    <p>Recognized for excellence in taste, design, and customer satisfaction.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#C44569" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3>Custom & Timely</h3>
+                    <p>Personalized designs delivered exactly when you need them, guaranteed fresh.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Emily made the most beautiful wedding cake for us. Every guest asked where we got it!"</p>
+                    <strong>- Sarah Johnson</strong>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"The German Chocolate cake is absolutely divine. Best I've ever had, hands down."</p>
+                    <strong>- Michael Chen</strong>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Professional, creative, and delicious. Emily exceeded all our expectations!"</p>
+                    <strong>- Lisa Martinez</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Order Your Custom Cake?</h2>
+            <p>Call us today or visit our shop to discuss your perfect cake</p>
+            <a href="contact.php" class="cta-button">Contact Us Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Emily Bakes Cakes</h4>
+                    <p>Custom cakes crafted with love and tradition since 2003</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>2847 Westheimer Road<br>Houston, TX 77098</p>
+                    <p>Phone: (713) 555-CAKE</p>
+                    <p>Email: info@emilybakescakes.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Hours</h4>
+                    <p>Monday-Friday: 9am-6pm<br>Saturday: 9am-5pm<br>Sunday: Closed</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <p><a href="index.php">Home</a></p>
+                    <p><a href="menu.php">Menu</a></p>
+                    <p><a href="about.php">About</a></p>
+                    <p><a href="contact.php">Contact</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Emily Bakes Cakes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
